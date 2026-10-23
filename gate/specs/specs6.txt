@@ -1,0 +1,4 @@
+# batch 6: capacity with the bilinear head, from scratch on all data (g1, g2, h1-h6); gated vs it6 and it4
+f_bil_c64b6    --arch res --ch 64 --blocks 6 --bil 32 --epochs 6
+f_bil_c48b6    --arch res --ch 48 --blocks 6 --bil 32 --epochs 6
+f_bil_c64b6_e10 --arch res --ch 64 --blocks 6 --bil 48 --epochs 10

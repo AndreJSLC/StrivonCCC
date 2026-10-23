@@ -1,0 +1,5 @@
+# batch C (pod 1): does the bilinear head help at 80x6 from scratch (big80 uses the plain head)?
+# And recurrent at scale. All data (g1, g2, h1-h21, q15 excluded), 14 epochs; gated vs big80 and it21.
+big_c80b6_bil  --arch res --ch 80 --blocks 6 --bil 48 --epochs 14
+rb80_k6_bn     --arch rec --ch 80 --k 6 --norm bn --bil 48 --epochs 14
+rb64_k8_bn     --arch rec --ch 64 --k 8 --norm bn --bil 48 --epochs 14

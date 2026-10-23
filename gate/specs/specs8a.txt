@@ -1,0 +1,7 @@
+# batch 8a (pod 1): recurrent variations, all with the bilinear head, all data (g1, g2, h1-h11); gated vs it6, it9
+rb48_k6_bn       --arch rec --ch 48 --k 6 --norm bn --bil 32 --epochs 10
+rb48_k6_ln_p     --arch rec --ch 48 --k 6 --kmin 3 --kmax 8 --norm ln --bil 32 --epochs 10
+rb48_pre2_k4_bn  --arch rec --ch 48 --pre 2 --k 4 --norm bn --bil 32 --epochs 10
+rb32_k10_bn      --arch rec --ch 32 --k 10 --norm bn --bil 32 --epochs 10
+rb48_k6_none_p   --arch rec --ch 48 --k 6 --kmin 3 --kmax 8 --norm none --bil 32 --epochs 10
+rb64_k6_bn       --arch rec --ch 64 --k 6 --norm bn --bil 48 --epochs 12

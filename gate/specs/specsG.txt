@@ -1,0 +1,7 @@
+# batch G (pod 1): grow bb1 in place, 80x6 -> 80x8 / 80x10, with the new blocks starting as identities.
+# Fine-tune at a low lr on bb-line self-play (bbh1-3, with q) using (z+q)/2 value targets.
+# The control fine-tunes bb1 at 80x6 with the same recipe. Gated vs bb1 over 250 games.
+g8_bb1      --arch res --ch 80 --blocks 8 --mainheads 1 --init candidates/bb1.onnx.pt --lr 6e-4 --epochs 4 --qmix 0.5
+ctl6_bb1    --arch res --ch 80 --blocks 6 --mainheads 1 --init candidates/bb1.onnx.pt --lr 6e-4 --epochs 4 --qmix 0.5
+g10_bb1     --arch res --ch 80 --blocks 10 --mainheads 1 --init candidates/bb1.onnx.pt --lr 6e-4 --epochs 4 --qmix 0.5
+g8_bb1_lr3  --arch res --ch 80 --blocks 8 --mainheads 1 --init candidates/bb1.onnx.pt --lr 3e-4 --epochs 4 --qmix 0.5

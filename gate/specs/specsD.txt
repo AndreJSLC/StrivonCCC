@@ -1,0 +1,6 @@
+# batch D (pod 1, efficiency track): biggest net inside the ~6 s worst-case side (about 8.2 ms per
+# batch-8 call), and MobileNet-style separable blocks at matched latency. All data, gated vs bb1 and it21.
+big_c80b8_bil  --arch res --ch 80 --blocks 8 --bil 48 --epochs 14
+mb96_t3_b12_bil --arch res --block mb --ch 96 --t 3 --blocks 12 --bil 48 --epochs 14
+mb128_t2_b10_bil --arch res --block mb --ch 128 --t 2 --blocks 10 --bil 64 --epochs 14
+big_c88b7_bil  --arch res --ch 88 --blocks 7 --bil 48 --epochs 14

@@ -1,0 +1,7 @@
+# batch 7: warm starts from it11 on the latest five generations (h7-h11), the champion loop's recipe (6 epochs,
+# one-cycle lr 2e-3). Only the policy head differs. Gated vs it11 and it15.
+w11_ctl    --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6
+w11_bila   --arch res --ch 48 --blocks 4 --mainheads 2 --bil 32 --init candidates/it11_c48.onnx.pt --epochs 6
+w11_bil    --arch res --ch 48 --blocks 4 --mainheads 1 --bil 32 --init candidates/it11_c48.onnx.pt --epochs 6
+w11_ctl_s1 --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --seed 1
+w11_bila_s1 --arch res --ch 48 --blocks 4 --mainheads 2 --bil 32 --init candidates/it11_c48.onnx.pt --epochs 6 --seed 1

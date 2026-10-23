@@ -1,0 +1,13 @@
+# batch 1: architecture sweep on g1 (200-sim self-play of the hand-built heuristic), all residual on the heuristic
+r_c48b4      --arch res --ch 48 --blocks 4 --epochs 8
+tf64_l4      --arch tf --d 64 --layers 4 --heads 4 --epochs 8
+rec32_k6p    --arch rec --ch 32 --k 6 --kmin 2 --kmax 8 --epochs 8
+gp_c48b4     --arch resgp --ch 48 --blocks 4 --epochs 8
+rec32_k10p   --arch rec --ch 32 --k 10 --kmin 4 --kmax 12 --epochs 8
+tf48_l3      --arch tf --d 48 --layers 3 --heads 4 --epochs 8
+r_c32b3      --arch res --ch 32 --blocks 3 --epochs 8
+rec32_k6     --arch rec --ch 32 --k 6 --epochs 8
+rec24_k12p   --arch rec --ch 24 --k 12 --kmin 4 --kmax 14 --epochs 8
+rec32gp_k6p  --arch rec --ch 32 --k 6 --kmin 2 --kmax 8 --gpool 1 --epochs 8
+r_c64b6      --arch res --ch 64 --blocks 6 --epochs 8
+tf64_l6      --arch tf --d 64 --layers 6 --heads 4 --epochs 8

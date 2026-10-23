@@ -1,0 +1,8 @@
+# big line v2 (pod 2): 64x6 and 64x8.
+# From scratch on ALL data (g1, g2, h1-h21, q15), gated vs it19 and it15. Then the transformer variations.
+big_c64b6_bil   --arch res --ch 64 --blocks 6 --bil 48 --epochs 14
+big_c64b8_bil   --arch res --ch 64 --blocks 8 --bil 48 --epochs 14
+big_c64b6       --arch res --ch 64 --blocks 6 --epochs 14
+ctf48_b2_l2     --arch tf --d 64 --layers 2 --heads 4 --conv_ch 48 --conv_blocks 2 --epochs 12
+tf64_l4_e20     --arch tf --d 64 --layers 4 --heads 4 --epochs 20 --lr 1e-3
+tf96_l3_e16     --arch tf --d 96 --layers 3 --heads 4 --epochs 16 --lr 1e-3

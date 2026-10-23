@@ -1,0 +1,5 @@
+# batch 4: Lc0-style bilinear from/to policy head on the frontier data (it beat it1 71% on g1 alone)
+f_bil_c48b4    --arch res --ch 48 --blocks 4 --bil 32 --epochs 6
+f_gpbil_c48b4  --arch resgp --ch 48 --blocks 4 --bil 32 --epochs 6
+w_bil_it6      --arch res --ch 48 --blocks 4 --mainheads 1 --bil 32 --init candidates/it6_c48.onnx.pt --lr 1e-3 --epochs 4
+f_bil_c48b4_e12 --arch res --ch 48 --blocks 4 --bil 32 --epochs 12

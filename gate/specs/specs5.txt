@@ -1,0 +1,6 @@
+# batch 5: warm starts from it9 with the champion loop's recipe (6 epochs, lr 2e-3 one-cycle, all data). Controlled:
+# same init, data and recipe; only the policy head differs. Gated vs it9.
+w9_ctl     --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it9_c48.onnx.pt --epochs 6
+w9_bila    --arch res --ch 48 --blocks 4 --mainheads 2 --bil 32 --init candidates/it9_c48.onnx.pt --epochs 6
+w9_bil     --arch res --ch 48 --blocks 4 --mainheads 1 --bil 32 --init candidates/it9_c48.onnx.pt --epochs 6
+w9_gpbila  --arch resgp --ch 48 --blocks 4 --mainheads 2 --bil 32 --init candidates/it9_c48.onnx.pt --epochs 6

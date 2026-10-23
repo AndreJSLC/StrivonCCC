@@ -1,0 +1,8 @@
+# batch 9 (pod 2): value target z vs (z+q)/2 vs q, on it15's 300-sim self-play with root q (q15),
+# warm start from it11.pt with the champion loop's recipe (6 epochs, one-cycle lr 2e-3). Gated vs it15.
+vq0      --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 0
+vq5      --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 0.5
+vq10     --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 1
+vq0_s1   --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 0 --seed 1
+vq5_s1   --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 0.5 --seed 1
+vq10_s1  --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it11_c48.onnx.pt --epochs 6 --qmix 1 --seed 1

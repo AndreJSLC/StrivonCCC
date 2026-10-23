@@ -1,0 +1,6 @@
+numpy
+onnx
+onnxruntime
+torch
+pillow
+psutil

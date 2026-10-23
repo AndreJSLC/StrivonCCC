@@ -1,0 +1,6 @@
+# batch 3: frontier data (g1, g2 and self-play of it1-it6), gated vs it6 and it4
+f_gp_c48b4   --arch resgp --ch 48 --blocks 4 --epochs 6
+w_gp_it6     --arch resgp --ch 48 --blocks 4 --mainheads 1 --init candidates/it6_c48.onnx.pt --lr 5e-4 --epochs 3
+w_r_it6      --arch res --ch 48 --blocks 4 --mainheads 1 --init candidates/it6_c48.onnx.pt --lr 5e-4 --epochs 3
+f_tf64_l4    --arch tf --d 64 --layers 4 --heads 4 --epochs 6
+f_r_c48b4    --arch res --ch 48 --blocks 4 --epochs 6

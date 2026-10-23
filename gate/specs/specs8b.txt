@@ -1,0 +1,7 @@
+# batch 8b (pod 2): transformer and capacity variations, all data (g1, g2, h1-h11); gated vs it6, it9
+f_bil_c64b6_e16  --arch res --ch 64 --blocks 6 --bil 48 --epochs 16
+ctf48_b2_l2      --arch tf --d 64 --layers 2 --heads 4 --conv_ch 48 --conv_blocks 2 --epochs 12
+tf64_l4_e20      --arch tf --d 64 --layers 4 --heads 4 --epochs 20 --lr 1e-3
+f_r_c64b6_e16    --arch res --ch 64 --blocks 6 --epochs 16
+tf96_l3_e16      --arch tf --d 96 --layers 3 --heads 4 --epochs 16 --lr 1e-3
+f_bil_c64b8_e12  --arch res --ch 64 --blocks 8 --bil 48 --epochs 12

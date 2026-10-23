@@ -1,0 +1,3 @@
+# batch D1 (pod 1): biggest full-conv nets inside ~8.2 ms per call; gated vs bb1 and it21
+big_c80b8_bil  --arch res --ch 80 --blocks 8 --bil 48 --epochs 14
+big_c88b7_bil  --arch res --ch 88 --blocks 7 --bil 48 --epochs 14

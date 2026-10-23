@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# contest material (not redistributed)
+src/env/
+scenes/
+
+# generated data, checkpoints and logs
+data/
+logs/
+sp/
+*.npz
+*.pt
+*.tgz
+*.log
+results.jsonl

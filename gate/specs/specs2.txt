@@ -1,0 +1,9 @@
+# batch 2: literature ideas (KataGo global pooling, Lc0 SE blocks and bilinear policy) + seed noise, g1 data
+r_c48b4_s1     --arch res --ch 48 --blocks 4 --epochs 8 --seed 1
+gp_c48b4_s1    --arch resgp --ch 48 --blocks 4 --epochs 8 --seed 1
+se_c48b4       --arch res --ch 48 --blocks 4 --se 1 --epochs 8
+bil_c48b4      --arch res --ch 48 --blocks 4 --bil 32 --epochs 8
+gpbil_c48b4    --arch resgp --ch 48 --blocks 4 --bil 32 --epochs 8
+tf64_l4_s1     --arch tf --d 64 --layers 4 --heads 4 --epochs 8 --seed 1
+tf64_l4_e16    --arch tf --d 64 --layers 4 --heads 4 --epochs 16
+r_c48b4_e16    --arch res --ch 48 --blocks 4 --epochs 16

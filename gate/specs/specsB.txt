@@ -1,0 +1,5 @@
+# big line (pod 2): from scratch on ALL data (g1, g2, h1-h21, q15),
+# 14 epochs, gated vs it19 (v12) and it15. Covers 80x6 and 64x8.
+big_c80b6_bil  --arch res --ch 80 --blocks 6 --bil 48 --epochs 14
+big_c64b8_bil  --arch res --ch 64 --blocks 8 --bil 48 --epochs 14
+big_c80b6      --arch res --ch 80 --blocks 6 --epochs 14
