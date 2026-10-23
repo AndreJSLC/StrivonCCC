@@ -109,14 +109,31 @@ flowchart LR
 
 ## Results and lessons
 
+### Progression
+
+Every score below comes from seeded head-to-head duels with the referee's search at 100 simulations, with each model playing both colours.
+
+| Stage | Model | Opponent | Score |
+|---|---|---|---|
+| 1 | Level 4 heuristic (hand-built) | Level 3 evaluator | **92.5%** (111 / 120) |
+| 2 | 48×4 residual nets, 22 self-play generations | the previous generation | typically 52–69% per step: gen 4 vs gen 1 **82%**, gen 9 vs gen 6 **72%**, gen 21 vs gen 19 **64.8%** (250 games) |
+| 3 | 80×6 net trained from scratch on all self-play data | best 48×4 net (gen 22) | 50% (a tie) |
+| 4 | 80×6, first self-play generation | 48×4 gen 21 | **74%** (185 / 250) |
+| 5 | champion-gated loop: champion 4 | stage 4 | **63.2%** (158 / 250) |
+| 6 | champion 8 | champion 4 | **69.5%** (139 / 200) |
+| 7 | **final model** (champion 14) | champion 11 | **73%** (109 / 150; 53 / 75 as Cyan, 56 / 75 as Magenta) |
+
+Against the hand-built heuristic the final model wins about 100% of games, and against the strongest net from the other lineage (48×4 gen 21) it wins 81%.
+
+### Side experiments
+
 | Head-to-head (referee search, 100 sims, both colours) | Score |
 |---|---|
-| Level 4 heuristic vs. the Level 3 evaluator | **92.5%** (111 / 120) |
 | Pure distillation net (48×4, trained only on the heuristic's search) vs. the heuristic | **98.5%** (197 / 200) |
 | Opening-prior sharpening (logits ×2.5 during the referee's sampled warm-up) | 53.4% (1,540 games) |
 | Muon + decoupled weight decay vs. AdamW (same net, same data) | 57.2% (343 / 600) |
 
-What mattered most:
+### What mattered most
 
 - **Residual on the heuristic was the biggest lever.** Nets trained from scratch levelled off at similar strength whatever the architecture. Extra capacity (80×6) only paid off inside the self-play loop.
 - **Value targets.** Mixing the game result with the root search value, `(z + q) / 2`, generalised better than `z` alone, which overfits.
@@ -174,7 +191,7 @@ python src/train2.py --heur models/level4_heuristic.onnx --out cand.onnx --ch 80
 python gate/gate.py cand.onnx models/level4_final.onnx --pairs 100
 ```
 
-The shell scripts in `src/` and `gate/` drive long runs on rented Linux servers and assume the repository is checked out at `/root/strivon`.
+The shell scripts in `src/` and `gate/` drive long runs on a multi-core Linux server and assume the repository is checked out at `/root/strivon`.
 
 ## Acknowledgements
 
