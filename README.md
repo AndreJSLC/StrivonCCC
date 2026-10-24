@@ -193,6 +193,11 @@ python gate/gate.py cand.onnx models/level4_final.onnx --pairs 100
 
 The shell scripts in `src/` and `gate/` drive long runs on a multi-core Linux server and assume the repository is checked out at `/root/strivon`.
 
+## Team
+
+- [André](https://github.com/AndreJSLC)
+- [Miguel Galrito](https://github.com/Miguel-Galrito)
+
 ## Acknowledgements
 
 - [Cloudflight Coding Contest](https://codingcontest.org/) for the challenge.
